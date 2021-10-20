@@ -2,7 +2,7 @@
 lock "~> 3.16.0"
 
 set :application, "web"
-set :repo_url, "https://github.com/capistrano/rails.git"
+set :repo_url, "https://github.com/neuronadev/webapp.git"
 set :user, 'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
@@ -23,8 +23,8 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 set :bundle_gemfile, "Gemfile"
 
-append :linked_files, "config/master.key"
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "public/uploads"
+append :linked_files, "config/database.yml", "config/master.key"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "public/uploads", "tmp/sockets", "public/system"
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
